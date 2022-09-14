@@ -9,6 +9,7 @@
 #include "events/ApplicationEvent.h"
 
 #include "imgui/ImGuiLayer.h"
+#include "rendering/Shader.h"
 
 int main(int argc, char** argv);
 
@@ -31,6 +32,9 @@ namespace RayAdas {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};

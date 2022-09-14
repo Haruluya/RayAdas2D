@@ -66,6 +66,21 @@
     <ClCompile Include="src\imgui\ImGuiBuild.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\opengl\OpenGLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rendering\Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rendering\Buffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rendering\Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\opengl\OpenGLBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vendor\includes\assimp\Compiler\poppack1.h">
@@ -1716,6 +1731,24 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\events\MouseButtonCodes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rendering\GraphicsContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\opengl\OpenGLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rendering\Shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rendering\Buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rendering\Renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\opengl\OpenGLBuffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

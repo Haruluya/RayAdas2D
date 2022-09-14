@@ -1,7 +1,7 @@
 #pragma once
 
 #include "windows/Window.h"
-
+#include "rendering/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
 
@@ -28,6 +28,7 @@ namespace RayAdas {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
