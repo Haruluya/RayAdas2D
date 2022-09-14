@@ -7,6 +7,9 @@
 #include "layer/LayerStack.h"
 #include "events/Event.h"
 #include "events/ApplicationEvent.h"
+
+#include "imgui/ImGuiLayer.h"
+
 int main(int argc, char** argv);
 
 namespace RayAdas {
@@ -25,6 +28,7 @@ namespace RayAdas {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

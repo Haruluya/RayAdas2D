@@ -36,9 +36,6 @@
     <ClCompile Include="vendor\includes\Imgui\imgui_impl_opengl3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="vendor\includes\Imgui\imgui_tables.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="vendor\includes\Imgui\imgui_widgets.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -63,10 +60,10 @@
     <ClCompile Include="src\imgui\ImGuiLayer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\windows\ImGuiOpenGLRenderer.cpp">
+    <ClCompile Include="src\windows\WindowsInput.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\windows\WindowsInput.cpp">
+    <ClCompile Include="src\imgui\ImGuiBuild.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1343,9 +1340,6 @@
     <ClInclude Include="vendor\includes\Imgui\imgui_impl_opengl3.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="vendor\includes\Imgui\imgui_impl_opengl3_loader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="vendor\includes\Imgui\imgui_internal.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -1710,9 +1704,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\imgui\ImGuiLayer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\windows\ImGuiOpenGLRenderer.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\events\Input.h">

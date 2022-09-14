@@ -1,48 +1,28 @@
+﻿#include "RApch.h"
 #include "RayAdas.h"
 
-class ExampleLayer : public RayAdas::Layer
+class SandBox : public RayAdas::Application
 {
 public:
-	ExampleLayer()
-		: Layer("Example")
-	{
-	}
+	SandBox();
+	~SandBox();
 
-	void OnUpdate() override
-	{
-		if (RayAdas::Input::IsKeyPressed(RA_KEY_TAB))
-			RA_TRACE("Tab key is pressed (poll)!");
-	}
-
-	void OnEvent(RayAdas::Event& event) override
-	{
-		if (event.GetEventType() == RayAdas::EventType::KeyPressed)
-		{
-			RayAdas::KeyPressedEvent& e = (RayAdas::KeyPressedEvent&)event;
-			if (e.GetKeyCode() == RA_KEY_TAB)
-				RA_TRACE("Tab key is pressed (event)!");
-			RA_TRACE("{0}", (char)e.GetKeyCode());
-		}
-	}
+private:
 
 };
 
-class Sandbox : public RayAdas::Application
+SandBox::SandBox()
 {
-public:
-	Sandbox()
-	{
-		PushLayer(new ExampleLayer());
-	}
+	//PushLayer(new SuiXin::ImGuiLayer());
+}
 
-	~Sandbox()
-	{
+SandBox::~SandBox()
+{
 
-	}
+}
 
-};
 
 RayAdas::Application* RayAdas::CreateApplication()
 {
-	return new Sandbox();
+	return new SandBox();
 }

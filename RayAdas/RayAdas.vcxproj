@@ -121,6 +121,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>src;</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeaderFile>RApch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,12 +148,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\imgui\ImGuiBuild.cpp" />
     <ClCompile Include="src\imgui\ImGuiLayer.cpp" />
     <ClCompile Include="src\layer\Layer.cpp" />
     <ClCompile Include="src\layer\LayerStack.cpp" />
     <ClCompile Include="src\log\Log.cpp" />
     <ClCompile Include="src\RApch.cpp" />
-    <ClCompile Include="src\windows\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\windows\WindowsInput.cpp" />
     <ClCompile Include="src\windows\WinWindow.cpp" />
     <ClCompile Include="vendor\includes\glad\glad.c" />
@@ -161,7 +163,6 @@
     <ClCompile Include="vendor\includes\Imgui\imgui_draw.cpp" />
     <ClCompile Include="vendor\includes\Imgui\imgui_impl_glfw.cpp" />
     <ClCompile Include="vendor\includes\Imgui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="vendor\includes\Imgui\imgui_tables.cpp" />
     <ClCompile Include="vendor\includes\Imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,7 +182,6 @@
     <ClInclude Include="src\log\Log.h" />
     <ClInclude Include="src\RApch.h" />
     <ClInclude Include="src\RayAdas.h" />
-    <ClInclude Include="src\windows\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\windows\Window.h" />
     <ClInclude Include="src\windows\WindowsInput.h" />
     <ClInclude Include="src\windows\WinWindow.h" />
@@ -611,7 +611,6 @@
     <ClInclude Include="vendor\includes\Imgui\imgui.h" />
     <ClInclude Include="vendor\includes\Imgui\imgui_impl_glfw.h" />
     <ClInclude Include="vendor\includes\Imgui\imgui_impl_opengl3.h" />
-    <ClInclude Include="vendor\includes\Imgui\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="vendor\includes\Imgui\imgui_internal.h" />
     <ClInclude Include="vendor\includes\Imgui\imstb_rectpack.h" />
     <ClInclude Include="vendor\includes\Imgui\imstb_textedit.h" />

@@ -5,7 +5,7 @@
 #include "events/ApplicationEvent.h"
 #include "events/MouseEvent.h"
 #include "events/KeyEvent.h"
-//#include <glad/glad.h>
+#include <glad/glad.h>
 
 namespace RayAdas {
 
@@ -53,8 +53,8 @@ namespace RayAdas {
 		glfwMakeContextCurrent(m_Window);
 
 		//?? glad ?
-		//int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		//RA_CORE_ASSERT(status, "Failed to initialize Glad!");
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		RA_CORE_ASSERT(status, "Failed to initialize Glad!");
 
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
