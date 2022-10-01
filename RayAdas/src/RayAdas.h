@@ -6,8 +6,8 @@
 
 
 
-//-----EntryPoint---------------
-#include "EntryPoint.h"
+//-----Main---------------
+#include "Main.h"
 //------------------------------
 
 
@@ -22,7 +22,7 @@
 
 
 //-----imgui--------------------
-#include "imgui/ImGuiLayer.h"
+#include "ui/ImGuiLayer.h"
 //------------------------------
 
 //-----input--------------------
@@ -30,3 +30,18 @@
 #include "events/KeyCodes.h"
 #include "events/MouseButtonCodes.h"
 //------------------------------
+
+//#include "Hazel/Core/Timestep.h"
+
+// ---Renderer------------------------
+#include "rendering/Renderer.h"
+#include "rendering/RenderCommand.h"
+
+#include "rendering/Buffer.h"
+#include "rendering/Shader.h"
+#include "rendering/VertexArray.h"
+
+#include "rendering/Texture.h"
+
+#include "rendering/OrthographicCamera.h"
+// 

@@ -1,19 +1,15 @@
 #pragma once
 
-#include "Core.h"
+
 
 #include "windows/Window.h"
 #include "layer/LayerStack.h"
 #include "events/Event.h"
 #include "events/ApplicationEvent.h"
 
-#include "imgui/ImGuiLayer.h"
+#include "Timestep.h"
 
-#include "rendering/Shader.h"
-#include "rendering/Buffer.h"
-#include "rendering/VertexArray.h"
-
-#include "rendering/OrthographicCamera.h"
+#include "ui/ImGuiLayer.h"
 
 namespace RayAdas {
 
@@ -35,19 +31,12 @@ namespace RayAdas {
 		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
-
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

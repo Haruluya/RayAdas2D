@@ -1,7 +1,7 @@
 #include "RApch.h"
 #include "RenderCommand.h"
 
-#include "opengl/OpenGLRendererAPI.h"
+#include "platform/opengl/OpenGLRendererAPI.h"
 
 namespace RayAdas {
 

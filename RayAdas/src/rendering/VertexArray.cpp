@@ -2,7 +2,7 @@
 #include "VertexArray.h"
 
 #include "Renderer.h"
-#include "opengl/OpenGLVertexArray.h"
+#include "platform/opengl/OpenGLVertexArray.h"
 
 namespace RayAdas {
 

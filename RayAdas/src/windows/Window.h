@@ -2,7 +2,7 @@
 
 
 
-#include "Core.h"
+
 #include "events/Event.h"
 
 namespace RayAdas {

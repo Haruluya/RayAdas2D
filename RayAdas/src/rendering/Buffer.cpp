@@ -3,7 +3,7 @@
 
 #include "Renderer.h"
 
-#include "opengl/OpenGLBuffer.h"
+#include "platform/opengl/OpenGLBuffer.h"
 
 namespace RayAdas {
 

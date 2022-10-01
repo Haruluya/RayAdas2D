@@ -54,16 +54,16 @@
     <ClCompile Include="src\layer\Layer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\imgui\ImGuiLayer.cpp">
+    <ClCompile Include="src\ui\ImGuiLayer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\windows\WindowsInput.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\imgui\ImGuiBuild.cpp">
+    <ClCompile Include="src\ui\ImGuiBuild.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\opengl\OpenGLContext.cpp">
+    <ClCompile Include="src\platform\opengl\OpenGLContext.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\rendering\Shader.cpp">
@@ -75,13 +75,13 @@
     <ClCompile Include="src\rendering\Renderer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\opengl\OpenGLBuffer.cpp">
+    <ClCompile Include="src\platform\opengl\OpenGLBuffer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\rendering\VertexArray.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\opengl\OpenGLVertexArray.cpp">
+    <ClCompile Include="src\platform\opengl\OpenGLVertexArray.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\log\Log.cpp">
@@ -93,10 +93,22 @@
     <ClCompile Include="src\rendering\RendererAPI.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\opengl\OpenGLRendererAPI.cpp">
+    <ClCompile Include="src\platform\opengl\OpenGLRendererAPI.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\rendering\OrthographicCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\opengl\OpenGLShader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rendering\Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\opengl\OpenGLTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\stb_image\stb_image.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1391,7 +1403,7 @@
     <ClInclude Include="vendor\includes\ft2build.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="vendor\includes\stb_image.h">
+    <ClInclude Include="vendor\includes\stb_image\stb_image.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="vendor\includes\glad\glad.h">
@@ -1406,10 +1418,7 @@
     <ClInclude Include="src\RayAdas.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\EntryPoint.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core.h">
+    <ClInclude Include="src\Main.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\log\Log.h">
@@ -1736,7 +1745,7 @@
     <ClInclude Include="src\layer\LayerStack.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\imgui\ImGuiLayer.h">
+    <ClInclude Include="src\ui\ImGuiLayer.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\events\Input.h">
@@ -1754,7 +1763,7 @@
     <ClInclude Include="src\rendering\GraphicsContext.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\opengl\OpenGLContext.h">
+    <ClInclude Include="src\platform\opengl\OpenGLContext.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\rendering\Shader.h">
@@ -1766,13 +1775,13 @@
     <ClInclude Include="src\rendering\Renderer.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\opengl\OpenGLBuffer.h">
+    <ClInclude Include="src\platform\opengl\OpenGLBuffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\rendering\VertexArray.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\opengl\OpenGLVertexArray.h">
+    <ClInclude Include="src\platform\opengl\OpenGLVertexArray.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\rendering\RenderCommand.h">
@@ -1781,10 +1790,25 @@
     <ClInclude Include="src\rendering\RendererAPI.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\opengl\OpenGLRendererAPI.h">
+    <ClInclude Include="src\platform\opengl\OpenGLRendererAPI.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\rendering\OrthographicCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimeStep.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\opengl\OpenGLShader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Ref.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rendering\Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\opengl\OpenGLTexture.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

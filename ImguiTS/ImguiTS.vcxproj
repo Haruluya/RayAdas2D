@@ -24,6 +24,7 @@
     <ProjectGuid>{03b11da6-66a0-4331-919a-e81c9f78714d}</ProjectGuid>
     <RootNamespace>ImguiTS</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ImguiComponent</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -123,6 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src;resource;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,7 +149,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\compnents\TextureUI.cpp" />
+    <ClCompile Include="src\EntryPoint.h" />
+    <ClCompile Include="src\ICpch.cpp" />
+    <ClCompile Include="src\log\log.cpp" />
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\RenderFrame.cpp" />
+    <ClCompile Include="vendor\includes\glad\glad.c" />
     <ClCompile Include="vendor\includes\glm\detail\glm.cpp" />
     <ClCompile Include="vendor\includes\Imgui\imgui.cpp" />
     <ClCompile Include="vendor\includes\Imgui\imgui_demo.cpp" />
@@ -163,6 +171,13 @@
     <Library Include="vendor\libs\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\compnents\CPinclude.h" />
+    <ClInclude Include="src\compnents\ICComponent.h" />
+    <ClInclude Include="src\compnents\TextureUI.h" />
+    <ClInclude Include="src\ICpch.h" />
+    <ClInclude Include="src\log\log.h" />
+    <ClInclude Include="src\RenderFrame.h" />
     <ClInclude Include="vendor\includes\assimp\ai_assert.h" />
     <ClInclude Include="vendor\includes\assimp\anim.h" />
     <ClInclude Include="vendor\includes\assimp\camera.h" />
@@ -300,6 +315,7 @@
     <ClInclude Include="vendor\includes\freetype\tttables.h" />
     <ClInclude Include="vendor\includes\freetype\tttags.h" />
     <ClInclude Include="vendor\includes\ft2build.h" />
+    <ClInclude Include="vendor\includes\glad\glad.h" />
     <ClInclude Include="vendor\includes\GLFW\glfw3.h" />
     <ClInclude Include="vendor\includes\GLFW\glfw3native.h" />
     <ClInclude Include="vendor\includes\glm\common.hpp" />
@@ -740,6 +756,9 @@
     <None Include="vendor\includes\glm\gtx\vector_angle.inl" />
     <None Include="vendor\includes\glm\gtx\vector_query.inl" />
     <None Include="vendor\includes\glm\gtx\wrap.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\images\haruluya.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

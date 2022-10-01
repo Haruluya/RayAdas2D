@@ -10,9 +10,10 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
-
+#include <array>
 #include <Windows.h>
 
 #include "log/Log.h"
 
-#include "Core.h"
+#include "utils/Ref.h"
+

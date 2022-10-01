@@ -15,10 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
+    <ClCompile Include="src\Application.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="vendor\includes\glm\detail\glm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderFrame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log\log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ICpch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\compnents\TextureUI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntryPoint.h">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\glad\glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="vendor\includes\Imgui\imgui.cpp">
@@ -1312,6 +1330,36 @@
     <ClInclude Include="vendor\includes\stb_image.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\includes\GLFW\glfw3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\GLFW\glfw3native.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderFrame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\log\log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ICpch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\compnents\TextureUI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\glad\glad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\compnents\ICComponent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\compnents\CPinclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\includes\Imgui\imconfig.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -1337,12 +1385,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="vendor\includes\Imgui\imstb_truetype.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\includes\GLFW\glfw3.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\includes\GLFW\glfw3native.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1776,5 +1818,10 @@
     <None Include="vendor\includes\glm\gtx\wrap.inl">
       <Filter>头文件</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\images\haruluya.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -123,6 +123,7 @@
       <AdditionalIncludeDirectories>src;</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeaderFile>RApch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,16 +148,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\platform\opengl\OpenGLShader.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\imgui\ImGuiBuild.cpp" />
-    <ClCompile Include="src\imgui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLTexture.cpp" />
+    <ClCompile Include="src\rendering\Texture.cpp" />
+    <ClCompile Include="src\ui\ImGuiBuild.cpp" />
+    <ClCompile Include="src\ui\ImGuiLayer.cpp" />
     <ClCompile Include="src\layer\Layer.cpp" />
     <ClCompile Include="src\layer\LayerStack.cpp" />
     <ClCompile Include="src\log\Log.cpp" />
-    <ClCompile Include="src\opengl\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\opengl\OpenGLContext.cpp" />
-    <ClCompile Include="src\opengl\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="src\opengl\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLContext.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\RApch.cpp" />
     <ClCompile Include="src\rendering\Buffer.cpp" />
     <ClCompile Include="src\rendering\OrthographicCamera.cpp" />
@@ -175,11 +179,12 @@
     <ClCompile Include="vendor\includes\Imgui\imgui_impl_glfw.cpp" />
     <ClCompile Include="vendor\includes\Imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="vendor\includes\Imgui\imgui_widgets.cpp" />
+    <ClCompile Include="vendor\includes\stb_image\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\platform\opengl\OpenGLShader.h" />
     <ClInclude Include="src\Application.h" />
-    <ClInclude Include="src\Core.h" />
-    <ClInclude Include="src\EntryPoint.h" />
+    <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\events\ApplicationEvent.h" />
     <ClInclude Include="src\events\Event.h" />
     <ClInclude Include="src\events\Input.h" />
@@ -187,14 +192,16 @@
     <ClInclude Include="src\events\KeyEvent.h" />
     <ClInclude Include="src\events\MouseButtonCodes.h" />
     <ClInclude Include="src\events\MouseEvent.h" />
-    <ClInclude Include="src\imgui\ImGuiLayer.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLTexture.h" />
+    <ClInclude Include="src\rendering\Texture.h" />
+    <ClInclude Include="src\ui\ImGuiLayer.h" />
     <ClInclude Include="src\layer\Layer.h" />
     <ClInclude Include="src\layer\LayerStack.h" />
     <ClInclude Include="src\log\Log.h" />
-    <ClInclude Include="src\opengl\OpenGLBuffer.h" />
-    <ClInclude Include="src\opengl\OpenGLContext.h" />
-    <ClInclude Include="src\opengl\OpenGLRendererAPI.h" />
-    <ClInclude Include="src\opengl\OpenGLVertexArray.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLBuffer.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLContext.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLVertexArray.h" />
     <ClInclude Include="src\RApch.h" />
     <ClInclude Include="src\RayAdas.h" />
     <ClInclude Include="src\rendering\Buffer.h" />
@@ -205,6 +212,8 @@
     <ClInclude Include="src\rendering\RendererAPI.h" />
     <ClInclude Include="src\rendering\Shader.h" />
     <ClInclude Include="src\rendering\VertexArray.h" />
+    <ClInclude Include="src\TimeStep.h" />
+    <ClInclude Include="src\utils\Ref.h" />
     <ClInclude Include="src\windows\Window.h" />
     <ClInclude Include="src\windows\WindowsInput.h" />
     <ClInclude Include="src\windows\WinWindow.h" />
@@ -738,7 +747,7 @@
     <ClInclude Include="vendor\includes\spdlog\stopwatch.h" />
     <ClInclude Include="vendor\includes\spdlog\tweakme.h" />
     <ClInclude Include="vendor\includes\spdlog\version.h" />
-    <ClInclude Include="vendor\includes\stb_image.h" />
+    <ClInclude Include="vendor\includes\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\includes\assimp\color4.inl" />

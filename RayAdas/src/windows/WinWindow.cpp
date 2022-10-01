@@ -5,7 +5,7 @@
 #include "events/ApplicationEvent.h"
 #include "events/MouseEvent.h"
 #include "events/KeyEvent.h"
-#include "opengl/OpenGLContext.h"
+#include "platform/opengl/OpenGLContext.h"
 
 namespace RayAdas {
 
