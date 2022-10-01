@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RayAdas", "RayAdas\RayAdas.vcxproj", "{93FECC61-3D0D-42CE-B63D-BBD1A336BB10}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImguiTS", "ImguiTS\ImguiTS.vcxproj", "{03B11DA6-66A0-4331-919A-E81C9F78714D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UIComponents", "UIComponents\UIComponents.vcxproj", "{03B11DA6-66A0-4331-919A-E81C9F78714D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "App", "App\App.vcxproj", "{BBAE514C-EA67-467A-A449-E7487A59DFAD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RayAdas-App", "RayAdas-App\RayAdas-App.vcxproj", "{BBAE514C-EA67-467A-A449-E7487A59DFAD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RayAdas-Editor", "RayAdas-Editor\RayAdas-Editor.vcxproj", "{F67490F1-541E-474C-B622-5725D1F82475}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{BBAE514C-EA67-467A-A449-E7487A59DFAD}.Release|x64.Build.0 = Release|x64
 		{BBAE514C-EA67-467A-A449-E7487A59DFAD}.Release|x86.ActiveCfg = Release|Win32
 		{BBAE514C-EA67-467A-A449-E7487A59DFAD}.Release|x86.Build.0 = Release|Win32
+		{F67490F1-541E-474C-B622-5725D1F82475}.Debug|x64.ActiveCfg = Debug|x64
+		{F67490F1-541E-474C-B622-5725D1F82475}.Debug|x64.Build.0 = Debug|x64
+		{F67490F1-541E-474C-B622-5725D1F82475}.Debug|x86.ActiveCfg = Debug|Win32
+		{F67490F1-541E-474C-B622-5725D1F82475}.Debug|x86.Build.0 = Debug|Win32
+		{F67490F1-541E-474C-B622-5725D1F82475}.Release|x64.ActiveCfg = Release|x64
+		{F67490F1-541E-474C-B622-5725D1F82475}.Release|x64.Build.0 = Release|x64
+		{F67490F1-541E-474C-B622-5725D1F82475}.Release|x86.ActiveCfg = Release|Win32
+		{F67490F1-541E-474C-B622-5725D1F82475}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

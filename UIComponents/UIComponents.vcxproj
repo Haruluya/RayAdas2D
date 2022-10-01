@@ -24,7 +24,7 @@
     <ProjectGuid>{03b11da6-66a0-4331-919a-e81c9f78714d}</ProjectGuid>
     <RootNamespace>ImguiTS</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>ImguiComponent</ProjectName>
+    <ProjectName>UIComponents</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -83,8 +83,8 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>vendor\includes;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>vendor\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
-    <OutDir>..\bin\Debug-windows-x86_64\ImguiTS\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-x86_64\ImguiTS\</IntDir>
+    <OutDir>..\bin\Debug-windows-x86_64\UIComponents\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\UIComponents\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

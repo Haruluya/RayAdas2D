@@ -24,6 +24,7 @@
     <ProjectGuid>{bbae514c-ea67-467a-a449-e7487a59dfad}</ProjectGuid>
     <RootNamespace>App</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>RayAdas-App</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,8 +79,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-x86_64\App\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-x86_64\App\</IntDir>
+    <OutDir>..\bin\Debug-windows-x86_64\RayAdas-App\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\RayAdas-App\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
