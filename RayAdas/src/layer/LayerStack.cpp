@@ -9,8 +9,11 @@ namespace RayAdas {
 
 	LayerStack::~LayerStack()
 	{
-		for (Layer* layer : m_Layers)
+		for (Layer* layer : m_Layers) {
 			delete layer;
+			//layer->OnDetach();
+		}
+
 	}
 
 	void LayerStack::PushLayer(Layer* layer)

@@ -151,6 +151,8 @@
     <ClCompile Include="src\platform\opengl\OpenGLShader.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\platform\opengl\OpenGLTexture.cpp" />
+    <ClCompile Include="src\rendering\OrthographicCameraController.cpp" />
+    <ClCompile Include="src\utils\RenderUtils.cpp" />
     <ClCompile Include="src\rendering\Texture.cpp" />
     <ClCompile Include="src\ui\ImGuiBuild.cpp" />
     <ClCompile Include="src\ui\ImGuiLayer.cpp" />
@@ -193,6 +195,9 @@
     <ClInclude Include="src\events\MouseButtonCodes.h" />
     <ClInclude Include="src\events\MouseEvent.h" />
     <ClInclude Include="src\platform\opengl\OpenGLTexture.h" />
+    <ClInclude Include="src\rendering\OrthographicCameraController.h" />
+    <ClInclude Include="src\utils\Instrumentor.h" />
+    <ClInclude Include="src\utils\RenderUtils.h" />
     <ClInclude Include="src\rendering\Texture.h" />
     <ClInclude Include="src\ui\ImGuiLayer.h" />
     <ClInclude Include="src\layer\Layer.h" />

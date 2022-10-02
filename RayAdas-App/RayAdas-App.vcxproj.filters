@@ -18,8 +18,17 @@
     <ClCompile Include="src\App.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\AppTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\shaders\Texture.glsl" />
+    <None Include="resources\shaders\FlatColor.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AppTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

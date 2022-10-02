@@ -24,7 +24,7 @@ namespace RayAdas {
 
 	void ImGuiLayer::OnAttach()
 	{
-
+		RA_PROFILE_FUNCTION();
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
@@ -60,7 +60,7 @@ namespace RayAdas {
 	void ImGuiLayer::OnDetach()
 	{
 
-
+		RA_PROFILE_FUNCTION();
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
@@ -79,6 +79,7 @@ namespace RayAdas {
 
 	void ImGuiLayer::Begin()
 	{
+		RA_PROFILE_FUNCTION();
 
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
@@ -88,7 +89,7 @@ namespace RayAdas {
 	void ImGuiLayer::End()
 	{
 
-
+		RA_PROFILE_FUNCTION();
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());

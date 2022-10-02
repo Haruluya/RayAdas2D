@@ -111,6 +111,12 @@
     <ClCompile Include="vendor\includes\stb_image\stb_image.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\rendering\OrthographicCameraController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\RenderUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vendor\includes\assimp\Compiler\poppack1.h">
@@ -1809,6 +1815,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\opengl\OpenGLTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rendering\OrthographicCameraController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\RenderUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Instrumentor.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

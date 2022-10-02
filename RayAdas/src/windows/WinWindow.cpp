@@ -19,21 +19,25 @@ namespace RayAdas {
 
 	Window* Window::Create(const WindowProps& props)
 	{
+		RA_PROFILE_FUNCTION();
 		return new WindowsWindow(props);
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
+		RA_PROFILE_FUNCTION();
 		Init(props);
 	}
 
 	WindowsWindow::~WindowsWindow()
 	{
+		RA_PROFILE_FUNCTION();
 		Shutdown();
 	}
 
 	void WindowsWindow::Init(const WindowProps& props)
 	{
+		RA_PROFILE_FUNCTION();
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
@@ -155,11 +159,13 @@ namespace RayAdas {
 
 	void WindowsWindow::Shutdown()
 	{
+		RA_PROFILE_FUNCTION();
 		glfwDestroyWindow(m_Window);
 	}
 
 	void WindowsWindow::OnUpdate()
 	{
+		RA_PROFILE_FUNCTION();
 		glfwPollEvents();
 		//glfwSwapBuffers(m_Window);
 		m_Context->SwapBuffers();
@@ -167,6 +173,7 @@ namespace RayAdas {
 
 	void WindowsWindow::SetVSync(bool enabled)
 	{
+		RA_PROFILE_FUNCTION();
 		if (enabled)
 			glfwSwapInterval(1);
 		else

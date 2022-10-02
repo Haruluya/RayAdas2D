@@ -1,7 +1,7 @@
 #include "RApch.h"
 #include "Renderer.h"
 #include "platform/opengl/OpenGLShader.h"
-
+#include "utils/RenderUtils.h"
 namespace RayAdas {
 
 
@@ -11,7 +11,13 @@ namespace RayAdas {
 
 	void Renderer::Init()
 	{
+		RA_PROFILE_FUNCTION();
 		RenderCommand::Init();
+		RenderUtils::Init();
+	}
+	void Renderer::OnWindowResize(uint32_t width, uint32_t height)
+	{
+		RenderCommand::SetViewport(0, 0, width, height);
 	}
 	void Renderer::BeginScene(OrthographicCamera& camera)
 	{
@@ -31,5 +37,10 @@ namespace RayAdas {
 		std::dynamic_pointer_cast<OpenGLShader>(shader)->UploadUniformMat4("u_Transform", transform);
 		vertexArray->Bind();
 		RenderCommand::DrawIndexed(vertexArray);
+	}
+
+	void Renderer::Shutdown()
+	{
+		RenderUtils::Shutdown();
 	}
 }

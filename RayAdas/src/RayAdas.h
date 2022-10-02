@@ -7,7 +7,7 @@
 
 
 //-----Main---------------
-#include "Main.h"
+
 //------------------------------
 
 
@@ -31,7 +31,7 @@
 #include "events/MouseButtonCodes.h"
 //------------------------------
 
-//#include "Hazel/Core/Timestep.h"
+//#include "RayAdas/Core/Timestep.h"
 
 // ---Renderer------------------------
 #include "rendering/Renderer.h"
@@ -44,4 +44,8 @@
 #include "rendering/Texture.h"
 
 #include "rendering/OrthographicCamera.h"
-// 
+#include "rendering/OrthographicCameraController.h"
+
+// utils.
+#include "utils/Instrumentor.h"
+#include "utils/RenderUtils.h"

@@ -1,19 +1,20 @@
 ﻿#include <RayAdas.h>
 
-#include "platform/opengl/OpenGLShader.h"
 
-#include "imgui/imgui.h"
+#include <imgui/imgui.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+
+#include "AppTest.h"
 
 class ExampleLayer : public RayAdas::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
-		m_VertexArray.reset(RayAdas::VertexArray::Create());
+		m_VertexArray = RayAdas::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
@@ -21,8 +22,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		RayAdas::SRef<RayAdas::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(RayAdas::VertexBuffer::Create(vertices, sizeof(vertices)));
+		RayAdas::SRef<RayAdas::VertexBuffer> vertexBuffer = RayAdas::VertexBuffer::Create(vertices, sizeof(vertices));
 		RayAdas::BufferLayout layout = {
 			{ RayAdas::ShaderDataType::Float3, "a_Position" },
 			{ RayAdas::ShaderDataType::Float4, "a_Color" }
@@ -31,11 +31,10 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		RayAdas::SRef<RayAdas::IndexBuffer> indexBuffer;
-		indexBuffer.reset(RayAdas::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		RayAdas::SRef<RayAdas::IndexBuffer> indexBuffer = RayAdas::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(RayAdas::VertexArray::Create());
+		m_SquareVA = RayAdas::VertexArray::Create();
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -44,8 +43,7 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		RayAdas::SRef<RayAdas::VertexBuffer> squareVB;
-		squareVB.reset(RayAdas::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		RayAdas::SRef<RayAdas::VertexBuffer> squareVB = RayAdas::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 		squareVB->SetLayout({
 			{ RayAdas::ShaderDataType::Float3, "a_Position" },
 			{ RayAdas::ShaderDataType::Float2, "a_TexCoord" }
@@ -53,8 +51,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		RayAdas::SRef<RayAdas::IndexBuffer> squareIB;
-		squareIB.reset(RayAdas::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		RayAdas::SRef<RayAdas::IndexBuffer> squareIB = RayAdas::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 		std::string vertexSrc = R"(
@@ -133,39 +130,25 @@ public:
 		m_Texture = RayAdas::Texture2D::Create("resources/textures/haruluya.jpg");
 		m_ChernoLogoTexture = RayAdas::Texture2D::Create("resources/textures/haruluya.jpg");
 
-		std::dynamic_pointer_cast<RayAdas::OpenGLShader>(textureShader)->Bind();
-		std::dynamic_pointer_cast<RayAdas::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
+		textureShader->Bind();
+		textureShader->SetInt("u_Texture", 0);
 	}
 
 	void OnUpdate(RayAdas::Timestep ts) override
 	{
-		if (RayAdas::Input::IsKeyPressed(RA_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		else if (RayAdas::Input::IsKeyPressed(RA_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
+		// Update
+		m_CameraController.OnUpdate(ts);
 
-		if (RayAdas::Input::IsKeyPressed(RA_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-		else if (RayAdas::Input::IsKeyPressed(RA_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-
-		if (RayAdas::Input::IsKeyPressed(RA_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		if (RayAdas::Input::IsKeyPressed(RA_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-
+		// Render
 		RayAdas::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		RayAdas::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		RayAdas::Renderer::BeginScene(m_Camera);
+		RayAdas::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
-		std::dynamic_pointer_cast<RayAdas::OpenGLShader>(m_FlatColorShader)->Bind();
-		std::dynamic_pointer_cast<RayAdas::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+		m_FlatColorShader->Bind();
+		m_FlatColorShader->SetFloat3("u_Color", m_SquareColor);
 
 		for (int y = 0; y < 20; y++)
 		{
@@ -197,8 +180,9 @@ public:
 		ImGui::End();
 	}
 
-	void OnEvent(RayAdas::Event& event) override
+	void OnEvent(RayAdas::Event& e) override
 	{
+		m_CameraController.OnEvent(e);
 	}
 private:
 	RayAdas::ShaderLibrary m_ShaderLibrary;
@@ -210,13 +194,7 @@ private:
 
 	RayAdas::SRef<RayAdas::Texture2D> m_Texture, m_ChernoLogoTexture;
 
-	RayAdas::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 5.0f;
-
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 180.0f;
-
+	RayAdas::OrthographicCameraController m_CameraController;
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };
 
@@ -225,14 +203,13 @@ class Sandbox : public RayAdas::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExampleLayer());
+		// PushLayer(new ExampleLayer());
+		PushLayer(new AppTest());
 	}
 
 	~Sandbox()
 	{
-
 	}
-
 };
 
 RayAdas::Application* RayAdas::CreateApplication()

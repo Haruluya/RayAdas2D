@@ -111,7 +111,7 @@ namespace RayAdas {
 		virtual const BufferLayout& GetLayout() const = 0;
 		virtual void SetLayout(const BufferLayout& layout) = 0;
 
-		static VertexBuffer* Create(float* vertices, uint32_t size);
+		static SRef<VertexBuffer> Create(float* vertices, uint32_t size);
 	};
 
 	class IndexBuffer
@@ -124,7 +124,7 @@ namespace RayAdas {
 
 		virtual uint32_t GetCount() const = 0;
 
-		static IndexBuffer* Create(uint32_t* indices, uint32_t size);
+		static SRef<IndexBuffer> Create(uint32_t* indices, uint32_t size);
 	};
 
 }

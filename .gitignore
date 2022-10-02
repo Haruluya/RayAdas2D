@@ -363,4 +363,10 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # person dir
-bin-int/*
+bin-int/	
+**/bin/
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
