@@ -15,7 +15,7 @@ namespace Firebird {
 		CreateCamera(window.GetWidth(), window.GetHeight());
 
 		// set random seed.
-		Random::Init();
+		RayAdas::Random::Init();
 
 		m_FontColor = 0xffffffff;
 	}

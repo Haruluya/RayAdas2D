@@ -146,8 +146,8 @@ namespace Firebird {
 		Barrier.TopPosition.z = index * 0.1f - 0.5f;
 		Barrier.BottomPosition.z = index * 0.1f - 0.5f + 0.05f;
 
-		float center = Random::Float() * 35.0f - 17.5f;
-		float gap = 2.0f + Random::Float() * 5.0f;
+		float center = RayAdas::Random::Float() * 35.0f - 17.5f;
+		float gap = 2.0f + RayAdas::Random::Float() * 5.0f;
 
 		Barrier.TopPosition.y = 10.0f - ((10.0f - center) * 0.2f) + gap * 0.5f;
 		Barrier.BottomPosition.y = -10.0f - ((-10.0f - center) * 0.2f) - gap * 0.5f;

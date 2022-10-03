@@ -50,3 +50,7 @@
 // utils.
 #include "utils/Instrumentor.h"
 #include "utils/RenderUtils.h"
+#include "utils/Random.h"
+
+
+#include "particle/ParticleSystem.h"

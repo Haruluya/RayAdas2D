@@ -117,6 +117,21 @@
     <ClCompile Include="src\utils\RenderUtils.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\opengl\OpenGLFramebuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rendering\Framebuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\particle\ParticleSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\Random.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\Imgui\imgui_tables.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vendor\includes\assimp\Compiler\poppack1.h">
@@ -1824,6 +1839,21 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\utils\Instrumentor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\opengl\OpenGLFramebuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rendering\Framebuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\particle\ParticleSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Random.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\Imgui\imgui_impl_opengl3_loader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
