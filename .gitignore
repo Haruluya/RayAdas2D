@@ -364,8 +364,10 @@ FodyWeavers.xsd
 
 # person dir
 bin-int/	
+bin-int
 **/bin/
 .vs/
+.vs
 **.sln
 **.vcxproj
 **.vcxproj.filters
