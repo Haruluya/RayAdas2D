@@ -45,6 +45,7 @@
 
 #include "rendering/OrthographicCamera.h"
 #include "rendering/OrthographicCameraController.h"
+#include "rendering/Framebuffer.h"
 
 // utils.
 #include "utils/Instrumentor.h"

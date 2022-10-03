@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\App.cpp" />
+    <ClCompile Include="src\AppLayer.cpp" />
     <ClCompile Include="src\AppTest.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +159,7 @@
     <None Include="resources\shaders\Texture.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\AppLayer.h" />
     <ClInclude Include="src\AppTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -16,13 +16,13 @@ namespace RayAdas {
 	Application* Application::s_Instance = nullptr;
 
 	// init application.
-	Application::Application()
+	Application::Application(const std::string& name)
 	{
 		RA_PROFILE_FUNCTION();
 		RA_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
-		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window = URef<Window>(Window::Create(name));
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
 		Renderer::Init();
@@ -101,6 +101,11 @@ namespace RayAdas {
 			// update window.
 			m_Window->OnUpdate();
 		}
+	}
+
+	void Application::Close()
+	{
+		m_Running = false;
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)

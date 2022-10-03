@@ -7,6 +7,17 @@
 
 namespace RayAdas {
 
+	SRef<VertexBuffer> VertexBuffer::Create(uint32_t size)
+	{
+		switch (Renderer::GetAPI())
+		{
+		case RendererAPI::API::None:    RA_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLVertexBuffer>(size);
+		}
+
+		RA_CORE_ASSERT(false, "Unknown RendererAPI!");
+		return nullptr;
+	}
 	SRef<VertexBuffer> VertexBuffer::Create(float* vertices, uint32_t size)
 	{
 		switch (Renderer::GetAPI())

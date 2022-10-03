@@ -16,7 +16,7 @@ namespace RayAdas {
 	class Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "RayAdas");
 		virtual ~Application();
 
 		void Run();
@@ -29,6 +29,7 @@ namespace RayAdas {
 		inline Window& GetWindow() { return *m_Window; }
 
 		inline static Application& Get() { return *s_Instance; }
+		void Close();
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);
