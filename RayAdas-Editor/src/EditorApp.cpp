@@ -3,7 +3,7 @@
 
 #include "EditorLayer.h"
 
-namespace RayAdasEditor {
+namespace RayAdas {
 
 	class EditorApp : public RayAdas::Application
 	{
@@ -22,5 +22,5 @@ namespace RayAdasEditor {
 }
 RayAdas::Application* RayAdas::CreateApplication()
 {
-	return new RayAdasEditor::EditorApp();
+	return new EditorApp();
 }

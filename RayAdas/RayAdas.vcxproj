@@ -118,12 +118,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOMINMAX;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>src;</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeaderFile>RApch.h</PrecompiledHeaderFile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,6 +149,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\entity\Entity.cpp" />
+    <ClCompile Include="src\entity\Scene.cpp" />
+    <ClCompile Include="src\entity\SceneCamera.cpp" />
     <ClCompile Include="src\particle\ParticleSystem.cpp" />
     <ClCompile Include="src\platform\opengl\OpenGLFramebuffer.cpp" />
     <ClCompile Include="src\platform\opengl\OpenGLShader.cpp" />
@@ -189,6 +193,13 @@
     <ClCompile Include="vendor\includes\stb_image\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\entity\Camera.h" />
+    <ClInclude Include="src\entity\Components.h" />
+    <ClInclude Include="src\entity\Entity.h" />
+    <ClInclude Include="vendor\includes\entt\entt.hpp" />
+    <ClInclude Include="src\entity\Scene.h" />
+    <ClInclude Include="src\entity\SceneCamera.h" />
+    <ClInclude Include="src\entity\ScriptableEntity.h" />
     <ClInclude Include="src\particle\ParticleSystem.h" />
     <ClInclude Include="src\platform\opengl\OpenGLFramebuffer.h" />
     <ClInclude Include="src\platform\opengl\OpenGLShader.h" />

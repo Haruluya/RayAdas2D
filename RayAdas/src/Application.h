@@ -30,6 +30,7 @@ namespace RayAdas {
 
 		inline static Application& Get() { return *s_Instance; }
 		void Close();
+		ImGuiLayer* GetImGuiLayer() { return m_ImGuiLayer; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);

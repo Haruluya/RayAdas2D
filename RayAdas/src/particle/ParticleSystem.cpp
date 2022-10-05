@@ -71,7 +71,7 @@ namespace RayAdas {
 			color.a = color.a * life;
 
 			float size = glm::lerp(particle.SizeEnd, particle.SizeBegin, life);
-			RenderUtils::DrawQuad(particle.Position, { size, size }, particle.Rotation, color);
+			//RenderUtils::DrawQuad(particle.Position, { size, size }, particle.Rotation, color);
 		}
 	}
 }

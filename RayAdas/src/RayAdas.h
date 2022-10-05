@@ -54,3 +54,7 @@
 
 
 #include "particle/ParticleSystem.h"
+
+
+#include "entity/Entity.h"
+#include "entity/Components.h"

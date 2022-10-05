@@ -132,6 +132,15 @@
     <ClCompile Include="vendor\includes\Imgui\imgui_tables.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\entity\Scene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entity\Entity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entity\SceneCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vendor\includes\assimp\Compiler\poppack1.h">
@@ -1854,6 +1863,27 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="vendor\includes\Imgui\imgui_impl_opengl3_loader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\Scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\entt\entt.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\Components.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\Entity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\SceneCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\ScriptableEntity.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
