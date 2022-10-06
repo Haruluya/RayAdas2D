@@ -1,3 +1,5 @@
+#pragma once
+
 
 #include <iostream>
 #include <memory>
@@ -15,6 +17,6 @@
 
 #include "log/Log.h"
 
-#include "utils/Ref.h"
 #include "utils/Instrumentor.h"
 
+#include "utils/Ref.h"

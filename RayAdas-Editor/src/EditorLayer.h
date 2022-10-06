@@ -1,6 +1,8 @@
 #pragma once
 
 #include "RayAdas.h"
+#include "Panels/SceneHierarchyPanel.h"
+
 
 namespace RayAdas {
 
@@ -17,7 +19,14 @@ namespace RayAdas {
 		virtual void OnImGuiRender() override;
 		void OnEvent(Event& e) override;
 	private:
-		RayAdas::OrthographicCameraController m_CameraController;
+		bool OnKeyPressed(KeyPressedEvent& e);
+		bool OnMouseButtonPressed(MouseButtonPressedEvent& e);
+
+		void NewScene();
+		void OpenScene();
+		void SaveSceneAs();
+	private:
+		OrthographicCameraController m_CameraController;
 
 		// Temp
 		SRef<VertexArray> m_SquareVA;
@@ -29,14 +38,24 @@ namespace RayAdas {
 		Entity m_CameraEntity;
 		Entity m_SecondCamera;
 
+		Entity m_HoveredEntity;
+
 		bool m_PrimaryCamera = true;
+
+		EditorCamera m_EditorCamera;
 
 		SRef<Texture2D> m_CheckerboardTexture;
 
 		bool m_ViewportFocused = false, m_ViewportHovered = false;
 		glm::vec2 m_ViewportSize = { 0.0f, 0.0f };
+		glm::vec2 m_ViewportBounds[2];
 
 		glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+
+		int m_GizmoType = -1;
+
+		// Panels
+		SceneHierarchyPanel m_SceneHierarchyPanel;
 	};
 
 }
