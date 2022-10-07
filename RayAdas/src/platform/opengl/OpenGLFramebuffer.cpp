@@ -1,5 +1,5 @@
 #include "RApch.h"
-#include "OpenGLFramebuffer.h"
+#include "Platform/OpenGL/OpenGLFramebuffer.h"
 
 #include <glad/glad.h>
 
@@ -76,7 +76,7 @@ namespace RayAdas {
 			return false;
 		}
 
-		static GLenum RayAdasFBTextureFormatToGL(FramebufferTextureFormat format)
+		static GLenum HazelFBTextureFormatToGL(FramebufferTextureFormat format)
 		{
 			switch (format)
 			{
@@ -84,6 +84,7 @@ namespace RayAdas {
 			case FramebufferTextureFormat::RED_INTEGER: return GL_RED_INTEGER;
 			}
 
+			RA_CORE_ASSERT(false);
 			return 0;
 		}
 
@@ -162,6 +163,7 @@ namespace RayAdas {
 
 		if (m_ColorAttachments.size() > 1)
 		{
+			RA_CORE_ASSERT(m_ColorAttachments.size() <= 4);
 			GLenum buffers[4] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2, GL_COLOR_ATTACHMENT3 };
 			glDrawBuffers(m_ColorAttachments.size(), buffers);
 		}
@@ -202,6 +204,7 @@ namespace RayAdas {
 
 	int OpenGLFramebuffer::ReadPixel(uint32_t attachmentIndex, int x, int y)
 	{
+		RA_CORE_ASSERT(attachmentIndex < m_ColorAttachments.size());
 
 		glReadBuffer(GL_COLOR_ATTACHMENT0 + attachmentIndex);
 		int pixelData;
@@ -212,11 +215,11 @@ namespace RayAdas {
 
 	void OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 	{
+		RA_CORE_ASSERT(attachmentIndex < m_ColorAttachments.size());
 
 		auto& spec = m_ColorAttachmentSpecifications[attachmentIndex];
 		glClearTexImage(m_ColorAttachments[attachmentIndex], 0,
-			Utils::RayAdasFBTextureFormatToGL(spec.TextureFormat), GL_INT, &value);
+			Utils::HazelFBTextureFormatToGL(spec.TextureFormat), GL_INT, &value);
 	}
-
 
 }

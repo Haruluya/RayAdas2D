@@ -1,7 +1,6 @@
-
 #pragma once
 
-
+#include "utils/Base.h"
 
 namespace RayAdas {
 

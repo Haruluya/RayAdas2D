@@ -28,7 +28,7 @@ namespace RayAdas {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
-		GraphicsContext* m_Context;
+		URef<GraphicsContext> m_Context;
 
 		struct WindowData
 		{

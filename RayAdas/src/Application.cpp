@@ -1,84 +1,94 @@
 #include "RApch.h"
 #include "Application.h"
 
-#include <glfw/glfw3.h>
+#include "log/Log.h"
+
 #include "rendering/Renderer.h"
 
 #include "events/Input.h"
+#include "utils/PlatformUtils.h"
 
 namespace RayAdas {
 
-
-
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
-
-	// application instance.
 	Application* Application::s_Instance = nullptr;
 
-	// init application.
-	Application::Application(const std::string& name)
+	Application::Application(const ApplicationSpecification& specification)
+		: m_Specification(specification)
 	{
 		RA_PROFILE_FUNCTION();
+
 		RA_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
-		m_Window = URef<Window>(Window::Create(name));
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		// Set working directory here
+		if (!m_Specification.WorkingDirectory.empty())
+			std::filesystem::current_path(m_Specification.WorkingDirectory);
+
+		m_Window = Window::Create(WindowProps(m_Specification.Name));
+		m_Window->SetEventCallback(RA_BIND_EVENT_FN(Application::OnEvent));
 
 		Renderer::Init();
-		
+
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 	}
+
 	Application::~Application()
 	{
 		RA_PROFILE_FUNCTION();
+
 		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
 		RA_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		RA_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
+	}
+
+	void Application::Close()
+	{
+		m_Running = false;
 	}
 
 	void Application::OnEvent(Event& e)
 	{
 		RA_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(RA_BIND_EVENT_FN(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(RA_BIND_EVENT_FN(Application::OnWindowResize));
 
-		// dispatch event.
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
-
-
-		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
 		{
-			(*--it)->OnEvent(e);
 			if (e.Handled)
 				break;
+			(*it)->OnEvent(e);
 		}
 	}
 
 	void Application::Run()
 	{
 		RA_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
-			RA_PROFILE_SCOPE("Run");
-			float time = (float)glfwGetTime();
+			RA_PROFILE_SCOPE("RunLoop");
+
+			float time = Time::GetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
-
-
-			// update each layer.
 			if (!m_Minimized)
 			{
 				{
@@ -87,6 +97,7 @@ namespace RayAdas {
 					for (Layer* layer : m_LayerStack)
 						layer->OnUpdate(timestep);
 				}
+
 				m_ImGuiLayer->Begin();
 				{
 					RA_PROFILE_SCOPE("LayerStack OnImGuiRender");
@@ -95,17 +106,10 @@ namespace RayAdas {
 						layer->OnImGuiRender();
 				}
 				m_ImGuiLayer->End();
-
 			}
 
-			// update window.
 			m_Window->OnUpdate();
 		}
-	}
-
-	void Application::Close()
-	{
-		m_Running = false;
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)
@@ -117,6 +121,7 @@ namespace RayAdas {
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
 		RA_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;

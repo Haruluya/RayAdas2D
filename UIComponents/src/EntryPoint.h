@@ -1,14 +1,26 @@
 #pragma once
-#include "log/log.h"
-#include "Application.h"
+#include "Hazel/Core/Base.h"
+#include "Hazel/Core/Application.h"
+
+#ifdef HZ_PLATFORM_WINDOWS
+
+extern Hazel::Application* Hazel::CreateApplication(ApplicationCommandLineArgs args);
 
 int main(int argc, char** argv)
 {
-	// 初始化日志配置。
-	ImguiCp::Log::Init();
-	IC_CORE_INFO("LOG INIT!");
-	ImguiCp::Application* app = new ImguiCp::Application();
-	app->runWindow();
+	Hazel::Log::Init();
+
+	HZ_PROFILE_BEGIN_SESSION("Startup", "HazelProfile-Startup.json");
+	auto app = Hazel::CreateApplication({ argc, argv });
+	HZ_PROFILE_END_SESSION();
+
+	HZ_PROFILE_BEGIN_SESSION("Runtime", "HazelProfile-Runtime.json");
+	app->Run();
+	HZ_PROFILE_END_SESSION();
+
+	HZ_PROFILE_BEGIN_SESSION("Shutdown", "HazelProfile-Shutdown.json");
 	delete app;
+	HZ_PROFILE_END_SESSION();
 }
 
+#endif

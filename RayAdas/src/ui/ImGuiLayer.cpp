@@ -1,9 +1,9 @@
 #include "RApch.h"
 #include "ImGuiLayer.h"
 
-#include <Imgui/imgui.h>
-#include <Imgui/imgui_impl_glfw.h>
-#include <Imgui/imgui_impl_opengl3.h>
+#include <imgui/imgui.h>
+#include <imgui/imgui_impl_glfw.h>
+#include <imgui/imgui_impl_opengl3.h>
 
 #include "Application.h"
 
@@ -35,8 +35,9 @@ namespace RayAdas {
 		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoTaskBarIcons;
 		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoMerge;
 
-		//io.Fonts->AddFontFromFileTTF("assets/fonts/opensans/OpenSans-Bold.ttf", 18.0f);
-		//io.FontDefault = io.Fonts->AddFontFromFileTTF("assets/fonts/opensans/OpenSans-Regular.ttf", 18.0f);
+		float fontSize = 18.0f;// *2.0f;
+		io.Fonts->AddFontFromFileTTF("assets/fonts/opensans/OpenSans-Bold.ttf", fontSize);
+		io.FontDefault = io.Fonts->AddFontFromFileTTF("assets/fonts/opensans/OpenSans-Regular.ttf", fontSize);
 
 		// Setup Dear ImGui style
 		ImGui::StyleColorsDark();

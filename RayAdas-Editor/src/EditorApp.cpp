@@ -5,22 +5,23 @@
 
 namespace RayAdas {
 
-	class EditorApp : public RayAdas::Application
+	class EditorApp : public Application
 	{
 	public:
-		EditorApp()
-			: RayAdas::Application("RayAdas Editor")
+		EditorApp(const ApplicationSpecification& spec)
+			: Application(spec)
 		{
 			PushLayer(new EditorLayer());
 		}
-
-		~EditorApp()
-		{
-		}
 	};
 
-}
-RayAdas::Application* RayAdas::CreateApplication()
-{
-	return new EditorApp();
+	Application* CreateApplication(ApplicationCommandLineArgs args)
+	{
+		ApplicationSpecification spec;
+		spec.Name = "EditorApp";
+		spec.CommandLineArgs = args;
+
+		return new EditorApp(spec);
+	}
+
 }

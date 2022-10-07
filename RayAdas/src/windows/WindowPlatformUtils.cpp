@@ -1,16 +1,21 @@
 #include "RApch.h"
 #include "utils/PlatformUtils.h"
+#include "Application.h"
 
 #include <commdlg.h>
 #include <GLFW/glfw3.h>
 #define GLFW_EXPOSE_NATIVE_WIN32
 #include <GLFW/glfw3native.h>
 
-#include "Application.h"
-
 namespace RayAdas {
 
-	std::optional<std::string> FileDialogs::OpenFile(const char* filter)
+	float Time::GetTime()
+	{
+		return glfwGetTime();
+	}
+
+
+	std::string FileDialogs::OpenFile(const char* filter)
 	{
 		OPENFILENAMEA ofn;
 		CHAR szFile[260] = { 0 };
@@ -28,10 +33,12 @@ namespace RayAdas {
 
 		if (GetOpenFileNameA(&ofn) == TRUE)
 			return ofn.lpstrFile;
-		return std::nullopt;
+
+		return std::string();
+
 	}
 
-	std::optional<std::string> FileDialogs::SaveFile(const char* filter)
+	std::string FileDialogs::SaveFile(const char* filter)
 	{
 		OPENFILENAMEA ofn;
 		CHAR szFile[260] = { 0 };
@@ -52,7 +59,8 @@ namespace RayAdas {
 
 		if (GetSaveFileNameA(&ofn) == TRUE)
 			return ofn.lpstrFile;
-		return std::nullopt;
+
+		return std::string();
 	}
 
 }

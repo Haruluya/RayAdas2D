@@ -5,6 +5,6 @@
 
 namespace RayAdas {
 
-	RendererAPI* RenderCommand::s_RendererAPI = new OpenGLRendererAPI;
+	URef<RendererAPI> RenderCommand::s_RendererAPI = RendererAPI::Create();
 
 }

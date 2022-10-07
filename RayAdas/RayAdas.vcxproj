@@ -46,7 +46,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -79,12 +79,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>vendor\includes;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>vendor\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <LibraryPath>vendor\libs;C:\VulkanSDK\1.3.216.0\Lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <OutDir>..\bin\Debug-windows-x86_64\RayAdas\</OutDir>
     <IntDir>..\bin-int\Debug-windows-x86_64\RayAdas\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86_64\RayAdas\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\RayAdas\</IntDir>
+    <IncludePath>vendor\includes;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>vendor\libs;C:\VulkanSDK\1.3.216.0\Lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -120,7 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NOMINMAX;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;C:\VulkanSDK\1.3.216.0\Include;</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeaderFile>RApch.h</PrecompiledHeaderFile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -140,6 +144,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src;C:\VulkanSDK\1.3.216.0\Include;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,8 +166,11 @@
     <ClCompile Include="src\platform\opengl\OpenGLShader.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\platform\opengl\OpenGLTexture.cpp" />
+    <ClCompile Include="src\platform\opengl\OpenGLUniformBuffer.cpp" />
     <ClCompile Include="src\rendering\Framebuffer.cpp" />
+    <ClCompile Include="src\rendering\GraphicsContext.cpp" />
     <ClCompile Include="src\rendering\OrthographicCameraController.cpp" />
+    <ClCompile Include="src\rendering\UniformBuffer.cpp" />
     <ClCompile Include="src\utils\Random.cpp" />
     <ClCompile Include="src\utils\RenderUtils.cpp" />
     <ClCompile Include="src\rendering\Texture.cpp" />
@@ -182,9 +191,56 @@
     <ClCompile Include="src\rendering\RendererAPI.cpp" />
     <ClCompile Include="src\rendering\Shader.cpp" />
     <ClCompile Include="src\rendering\VertexArray.cpp" />
+    <ClCompile Include="src\utils\UUID.cpp" />
+    <ClCompile Include="src\windows\Window.cpp" />
     <ClCompile Include="src\windows\WindowPlatformUtils.cpp" />
     <ClCompile Include="src\windows\WindowsInput.cpp" />
     <ClCompile Include="src\windows\WinWindow.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_broad_phase.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_chain_shape.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_circle_shape.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_collide_circle.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_collide_edge.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_collide_polygon.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_collision.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_distance.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_dynamic_tree.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_edge_shape.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_polygon_shape.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_time_of_impact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_block_allocator.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_draw.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_math.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_settings.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_stack_allocator.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_timer.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_body.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_chain_circle_contact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_chain_polygon_contact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_circle_contact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_contact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_contact_manager.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_contact_solver.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_distance_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_edge_circle_contact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_edge_polygon_contact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_fixture.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_friction_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_gear_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_island.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_motor_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_mouse_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_polygon_circle_contact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_polygon_contact.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_prismatic_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_pulley_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_revolute_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_weld_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_wheel_joint.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_world.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_world_callbacks.cpp" />
+    <ClCompile Include="vendor\includes\box2d\src\rope\b2_rope.cpp" />
     <ClCompile Include="vendor\includes\glad\glad.c" />
     <ClCompile Include="vendor\includes\glm\detail\glm.cpp" />
     <ClCompile Include="vendor\includes\ImGuizmo\ImCurveEdit.cpp" />
@@ -239,9 +295,62 @@
     <ClInclude Include="src\entity\Entity.h" />
     <ClInclude Include="src\entity\SceneSerializer.h" />
     <ClInclude Include="src\math\math.h" />
+    <ClInclude Include="src\platform\opengl\OpenGLUniformBuffer.h" />
+    <ClInclude Include="src\rendering\UniformBuffer.h" />
     <ClInclude Include="src\utils\Base.h" />
     <ClInclude Include="src\utils\PlatformDetection.h" />
     <ClInclude Include="src\utils\PlatformUtils.h" />
+    <ClInclude Include="src\utils\Timer.h" />
+    <ClInclude Include="src\utils\UUID.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_api.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_block_allocator.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_body.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_broad_phase.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_chain_shape.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_circle_shape.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_collision.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_common.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_contact.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_contact_manager.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_distance.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_distance_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_draw.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_dynamic_tree.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_edge_shape.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_fixture.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_friction_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_gear_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_growable_stack.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_math.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_motor_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_mouse_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_polygon_shape.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_prismatic_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_pulley_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_revolute_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_rope.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_settings.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_shape.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_stack_allocator.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_timer.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_time_of_impact.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_time_step.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_types.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_weld_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_wheel_joint.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_world.h" />
+    <ClInclude Include="vendor\includes\box2d\b2_world_callbacks.h" />
+    <ClInclude Include="vendor\includes\box2d\box2d.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_chain_circle_contact.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_chain_polygon_contact.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_circle_contact.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_contact_solver.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_edge_circle_contact.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_edge_polygon_contact.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_island.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_polygon_circle_contact.h" />
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_polygon_contact.h" />
     <ClInclude Include="vendor\includes\entt\entt.hpp" />
     <ClInclude Include="src\entity\Scene.h" />
     <ClInclude Include="src\entity\SceneCamera.h" />
@@ -1031,9 +1140,42 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="vendor\libs\assimpd.lib" />
+    <Library Include="vendor\libs\Box2D.lib" />
     <Library Include="vendor\libs\freetyped.lib" />
     <Library Include="vendor\libs\glfw3.lib" />
     <Library Include="vendor\libs\spdlogd.lib" />
+    <Library Include="vendor\libs\vulkan\dxcompiler.lib" />
+    <Library Include="vendor\libs\vulkan\GenericCodeGen.lib" />
+    <Library Include="vendor\libs\vulkan\glslang-default-resource-limits.lib" />
+    <Library Include="vendor\libs\vulkan\glslang.lib" />
+    <Library Include="vendor\libs\vulkan\HLSL.lib" />
+    <Library Include="vendor\libs\vulkan\MachineIndependent.lib" />
+    <Library Include="vendor\libs\vulkan\OGLCompiler.lib" />
+    <Library Include="vendor\libs\vulkan\OSDependent.lib" />
+    <Library Include="vendor\libs\vulkan\shaderc.lib" />
+    <Library Include="vendor\libs\vulkan\shaderc_combined.lib" />
+    <Library Include="vendor\libs\vulkan\shaderc_shared.lib" />
+    <Library Include="vendor\libs\vulkan\shaderc_util.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-c-shared.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-c.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-core.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-cpp.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-glsl.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-hlsl.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-msl.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-reflect.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-util.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-diff.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-link.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-lint.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-opt.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-reduce.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-shared.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV.lib" />
+    <Library Include="vendor\libs\vulkan\SPVRemapper.lib" />
+    <Library Include="vendor\libs\vulkan\VkLayer_utils.lib" />
+    <Library Include="vendor\libs\vulkan\vulkan-1.lib" />
     <Library Include="vendor\libs\yaml-cpp.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

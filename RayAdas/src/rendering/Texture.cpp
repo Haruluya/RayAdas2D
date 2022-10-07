@@ -1,10 +1,10 @@
 #include "RApch.h"
-#include "Texture.h"
-#include "Renderer.h"
-#include "platform/opengl/OpenGLTexture.h"
-#include "stb_image/stb_image.h"
+#include "rendering/Texture.h"
 
-namespace RayAdas{
+#include "rendering/Renderer.h"
+#include "Platform/OpenGL/OpenGLTexture.h"
+
+namespace RayAdas {
 
 	SRef<Texture2D> Texture2D::Create(uint32_t width, uint32_t height)
 	{
@@ -29,4 +29,5 @@ namespace RayAdas{
 		RA_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}
+
 }

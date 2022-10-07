@@ -258,6 +258,156 @@
     <ClCompile Include="vendor\includes\yaml-cpp\src\tag.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\rendering\UniformBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\UUID.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_broad_phase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_chain_shape.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_circle_shape.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_collide_circle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_collide_edge.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_collide_polygon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_collision.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_distance.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_dynamic_tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_edge_shape.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_polygon_shape.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\collision\b2_time_of_impact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_block_allocator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_draw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_math.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_settings.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_stack_allocator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\common\b2_timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_body.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_chain_circle_contact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_chain_polygon_contact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_circle_contact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_contact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_contact_manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_contact_solver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_distance_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_edge_circle_contact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_edge_polygon_contact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_fixture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_friction_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_gear_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_island.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_motor_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_mouse_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_polygon_circle_contact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_polygon_contact.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_prismatic_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_pulley_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_revolute_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_weld_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_wheel_joint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_world.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\dynamics\b2_world_callbacks.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\includes\box2d\src\rope\b2_rope.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rendering\GraphicsContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\opengl\OpenGLUniformBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\windows\Window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vendor\includes\assimp\Compiler\poppack1.h">
@@ -2213,6 +2363,165 @@
     <ClInclude Include="vendor\includes\yaml-cpp\src\token.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\rendering\UniformBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\UUID.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_chain_circle_contact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_chain_polygon_contact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_circle_contact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_contact_solver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_edge_circle_contact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_edge_polygon_contact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_island.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_polygon_circle_contact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\src\dynamics\b2_polygon_contact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_api.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_block_allocator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_body.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_broad_phase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_chain_shape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_circle_shape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_collision.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_contact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_contact_manager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_distance.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_distance_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_draw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_dynamic_tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_edge_shape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_fixture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_friction_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_gear_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_growable_stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_math.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_motor_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_mouse_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_polygon_shape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_prismatic_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_pulley_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_revolute_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_rope.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_settings.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_shape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_stack_allocator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_time_of_impact.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_time_step.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_weld_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_wheel_joint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_world.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\b2_world_callbacks.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\includes\box2d\box2d.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\opengl\OpenGLUniformBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\includes\assimp\color4.inl">
@@ -2651,5 +2960,38 @@
     <Library Include="vendor\libs\glfw3.lib" />
     <Library Include="vendor\libs\spdlogd.lib" />
     <Library Include="vendor\libs\yaml-cpp.lib" />
+    <Library Include="vendor\libs\Box2D.lib" />
+    <Library Include="vendor\libs\vulkan\dxcompiler.lib" />
+    <Library Include="vendor\libs\vulkan\GenericCodeGen.lib" />
+    <Library Include="vendor\libs\vulkan\glslang.lib" />
+    <Library Include="vendor\libs\vulkan\glslang-default-resource-limits.lib" />
+    <Library Include="vendor\libs\vulkan\HLSL.lib" />
+    <Library Include="vendor\libs\vulkan\MachineIndependent.lib" />
+    <Library Include="vendor\libs\vulkan\OGLCompiler.lib" />
+    <Library Include="vendor\libs\vulkan\OSDependent.lib" />
+    <Library Include="vendor\libs\vulkan\shaderc.lib" />
+    <Library Include="vendor\libs\vulkan\shaderc_combined.lib" />
+    <Library Include="vendor\libs\vulkan\shaderc_shared.lib" />
+    <Library Include="vendor\libs\vulkan\shaderc_util.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-c.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-core.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-cpp.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-c-shared.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-glsl.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-hlsl.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-msl.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-reflect.lib" />
+    <Library Include="vendor\libs\vulkan\spirv-cross-util.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-diff.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-link.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-lint.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-opt.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-reduce.lib" />
+    <Library Include="vendor\libs\vulkan\SPIRV-Tools-shared.lib" />
+    <Library Include="vendor\libs\vulkan\SPVRemapper.lib" />
+    <Library Include="vendor\libs\vulkan\VkLayer_utils.lib" />
+    <Library Include="vendor\libs\vulkan\vulkan-1.lib" />
   </ItemGroup>
 </Project>
